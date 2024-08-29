@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--application.yml 传递参数，不能使用logback 自带的<property>标签 -->
+    <springProperty scope="context" name="appName" source="spring.application.name"/>
+    <springProperty scope="context" name="logDir" source="logback.logDir"/>
+    <springProperty scope="context" name="fileType" source="logback.fileType"/>
+
+    <!-- 控制台日志输出格式 -->
+    <!-- 日期 [线程] [class类]-[日志级别] log内容 -->
+    <property name="LOG_PATTERN_CONSOLE" value="%blue(%d{yyyy-MM-dd HH:mm:ss,SSS}) [%cyan(%t)] [%yellow(%c)]-[%highlight(%p)], %m%n" />
+    <!-- 文件日志输出格式 -->
+    <property name="LOG_PATTERN_FILE" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} --> %msg%n" />
+    <!--- 设置控制台日志 -->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN_CONSOLE}</pattern>
+        </encoder>
+    </appender>
+    <!-- 设置日志文件 -->
+    <appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+        <!-- 总文件日志 -->
+        <file>${logDir}/${appName}.${fileType}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 每天的文件日志 -->
+            <fileNamePattern>${logDir}/${appName}-%d{yyyy-MM-dd}.${fileType}</fileNamePattern>
+            <!-- 日志文件保存7天，超过7天的自动删除 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 设置日志级别，及需要记录日志的类 -->
+    <root level="INFO">
+        <appender-ref ref="consoleLog" />
+        <appender-ref ref="fileLog" />
+    </root>
+</configuration>

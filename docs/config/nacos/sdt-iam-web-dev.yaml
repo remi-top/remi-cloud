@@ -1,0 +1,122 @@
+spring:
+  application:
+    name: remi-sys-web
+  config:
+    activate:
+      on-profile: dev
+  servlet:
+    multipart:
+      # 上传文件总的最大值
+      max-request-size: 100MB
+      # 单个文件的最大值
+      max-file-size: 100MB
+  datasource:
+    # mysql
+    url: jdbc:mysql://192.168.31.66:3306/remi-saas-iam?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    # 初始化大小，最小，最大
+    initial-size: 5
+    min-idle: 5
+    max-active: 20
+    # 配置获取连接等待超时的时间
+    max-wait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    time-between-eviction-runs-millis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    min-evictable-idle-time-millis: 300000
+    # mysql
+    validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    pool-prepared-statements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    max-pool-prepared-statement-per-connection-size: 20
+    filters: stat,wall
+    use-global-data-source-stat: true
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  redis:
+    database: 0
+    host: 192.168.31.66
+    password: ydsz1020
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        timeout: 1000
+
+# 异步线程配置
+async:
+  executor:
+    thread:
+      # 核心线程数
+      corePoolSize: 10
+      # 最大线程数
+      maxPoolSize: 30
+      # 任务队列大小
+      queueCapacity: 3000
+      # 缓冲队列中线程的空闲时间
+      keepAliveSeconds: 300
+      
+# MinIO
+minio:
+  #对象存储服务的URL
+  url: http://192.168.31.88:9000
+  #账户
+  accessKey: admin
+  #密码
+  secretKey: Sdt@1020~
+  #存储桶
+  bucketName: remi-paas-iam
+
+# 拦截器
+sql-intercept:
+  tenant: 
+    deptTenant: 
+      enable: true
+    companyTenant: 
+      enable: true
+    anonUrlSet: /sso/login/ticket,/sso/login/other,/sso/login/local,/sso/logout,/sso/oauth2/accessToken,/sso/oauth2/refreshToken,/sso/oauth2/checkToken,/logRecord/add,/logRecord/pageLogin,/logRecord/pageOperate,/logRecord/pageException
+  field-fill:
+    createdByIntercept:
+      enable: true
+    updateByIntercept:
+      enable: true
+    createAtIntercept:
+      enable: true
+    updateAtIntercept:
+      enable: true
+# springdoc-openapi项目配置
+springdoc:
+  #是否开启文档功能
+  group-configs:
+    - group: 'iam-web'
+      paths-to-match: '/**'
+      packages-to-scan: ai.remi.iam.web
+
+# 开启系统操作日志
+log:
+  record:
+    enabled: true
+    appName: IAM
+    pushUrl: http://localhost:6103/operateLog/add
+
+# 日志输出路径配置
+logback:
+  logDir: D:\Logs\sdt\cloud\${spring.application.name}\
+  maxSize: 500MB
+  maxDays: 30
+
+# 应用信息
+appInfo:
+  code: iam
+  key: kxxyuc46
+  secret: f62b0078aa9b9bcc953b71d614fe999b

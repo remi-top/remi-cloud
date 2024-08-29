@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>remi-demo</artifactId>
+    <name>remi-demo</name>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>ai.remi.cloud</groupId>
+        <artifactId>remi-cloud</artifactId>
+        <version>3.1.0</version>
+    </parent>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>release</name>
+            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>snapshot</name>
+            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <modules>
+        <module>remi-demo-domain</module>
+        <module>remi-demo-infra</module>
+        <module>remi-demo-server</module>
+        <module>remi-demo-job</module>
+        <module>remi-demo-app</module>
+        <module>remi-demo-web</module>
+        <module>remi-demo-api</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--remi-demo-->
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-domain</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-infra</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-server</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-job</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-api</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-app</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.cloud</groupId>
+                <artifactId>remi-demo-web</artifactId>
+                <version>${remi.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -1,8 +1,8 @@
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">Startdis Cloud</h1>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">Remi Cloud</h1>
 
 ## 平台简介
 
-Startdis Cloud 即 Startdis Dev Tools 启迪快速开发平台的多模块微服务开发框架。由[江苏点九科技有限公司](https://dianjiu.cc)提供技术支持。
+Remi Cloud 即 Remi Dev Tools 启迪快速开发平台的多模块微服务开发框架。由[江苏点九科技有限公司](https://dianjiu.cc)提供技术支持。
 
 ### 分支说明
 
@@ -17,25 +17,25 @@ https://www.yuque.com/dianjiuxyz/vpdfr9
 
 ### 体验地址
 
-https://sdt.startdis.com
+https://sdt.remi.com
 
-startdis/startdis2022
+remi/remi2022
 
 ### 其他产品
 
-- 👉🏻 [自研 IAM 统一身份引擎](https://iam.startdis.com)
+- 👉🏻 [自研 IAM 统一身份引擎](https://iam.remi.com)
 
-- 👉🏻 [自研 BPM 统一流程引擎](https://bpm.startdis.com)
+- 👉🏻 [自研 BPM 统一流程引擎](https://bpm.remi.com)
 
-- 👉🏻 [自研 LCE 低代码引擎](https://lce.startdis.com)
+- 👉🏻 [自研 LCE 低代码引擎](https://lce.remi.com)
 
 ## 快速开始
 
 ### 模块说明
 ~~~
-startdis-boot     
+remi-demo     
 ├── docs                                              // 说明文档
-└── sdt-comm                                          // 公共模块
+└── remi-comm                                          // 公共模块
      ├── comm-auth                                    // 权限控制
      ├── comm-core                                    // 核心模块
      ├── comm-domain                                  // 领域模型
@@ -63,9 +63,9 @@ startdis-boot
      ├── comm-security                                // 安全模块
      ├── comm-swagger                                 // 系统接口
      ├── pom.xml                                      // 公共依赖
-└── sdt-iam                                           // 身份引擎（统一身份管理）
-└── sdt-bpm                                           // 流程引擎（统一流程管理）
-└── sdt-xpe                                           // 插件引擎（插件拓展平台）
-└── sdt-lce                                           // 代码引擎（低代码平台）
+└── remi-sys                                           // 身份引擎（统一身份管理）
+└── remi-bpm                                           // 流程引擎（统一流程管理）
+└── remi-xpe                                           // 插件引擎（插件拓展平台）
+└── remi-lce                                           // 代码引擎（低代码平台）
 ~~~
 

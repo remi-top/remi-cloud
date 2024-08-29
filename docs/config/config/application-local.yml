@@ -1,0 +1,111 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  servlet:
+    multipart:
+      # 上传文件总的最大值
+      max-request-size: 100MB
+      # 单个文件的最大值
+      max-file-size: 100MB
+  datasource:
+    # mysql
+    url: jdbc:mysql://192.168.2.202:3306/remi-paas-ids?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Sdt@1020
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    # 初始化大小，最小，最大
+    initial-size: 5
+    min-idle: 5
+    max-active: 20
+    # 配置获取连接等待超时的时间
+    max-wait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    time-between-eviction-runs-millis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    min-evictable-idle-time-millis: 300000
+    # mysql
+    validation-query: SELECT 1 FROM DUAL
+    # postgre
+    #validation-query: SELECT 1
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    pool-prepared-statements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    max-pool-prepared-statement-per-connection-size: 20
+    filters: stat,wall
+    use-global-data-source-stat: true
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  redis:
+    database: 0
+    host: 192.168.2.202
+    password:
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        timeout: 1000
+# MinIO
+minio:
+  #对象存储服务的URL
+  url: http://192.168.2.202:9000
+  #账户
+  accessKey: admin
+  #密码
+  secretKey: Sdt@1020
+  #存储桶
+  bucketName: remi-paas-ids
+# 异步线程配置
+async:
+  executor:
+    thread:
+      # 核心线程数
+      corePoolSize: 5
+      # 最大线程数
+      maxPoolSize: 20
+      # 任务队列大小
+      queueCapacity: 1000
+      # 缓冲队列中线程的空闲时间
+      keepAliveSeconds: 3000
+
+# 拦截器
+sql-intercept:
+  tenant:
+    deptTenant:
+      enable: true
+    companyTenant:
+      enable: true
+    anonUrlSet: /user/getUserInfoByUserCode,/appInfo/list,/common/getUserInfo,/dept/getDeptByUserCode,/company/getCompanyInfoById,/operateLog/add,/operateLog/page,/operateLog/logPage
+  field-fill:
+    createdByIntercept:
+      enable: true
+    updateByIntercept:
+      enable: true
+    createAtIntercept:
+      enable: true
+    updateAtIntercept:
+      enable: true
+
+## 开启店铺id 拦截器
+interceptor:
+  company:
+    enabled: true
+
+# 开启系统操作日志
+log:
+  record:
+    enabled: true
+    pushUrl: http://localhost:6103/operateLog/add
+    appName: IDS
+
+# 日志输出路径配置
+logback:
+#  logDir: /Users/dianjiu/Logs/remi/remi-ids-web
+  logDir: D:\\Logs\\sdt\\paas\\remi-ids-web
