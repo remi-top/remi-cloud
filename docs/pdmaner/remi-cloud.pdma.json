@@ -4,7 +4,7 @@
   "avatar": "",
   "version": "4.9.4",
   "createdTime": "2022-10-11 11:11:00",
-  "updatedTime": "2024-8-31 20:09:43",
+  "updatedTime": "2024-8-31 21:19:33",
   "dbConns": [],
   "profile": {
     "default": {
@@ -16052,8 +16052,26 @@
           "uiHint": null
         },
         {
+          "defKey": "notice_title",
+          "defName": "通知标题",
+          "comment": "",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": false,
+          "refDict": "",
+          "baseType": "B11C77FA-8557-4BCA-B423-212D7CD49695",
+          "extProps": {},
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "id": "5E79FECE-344B-4366-9CD8-9F17535C1ED3"
+        },
+        {
           "defKey": "notice_type",
-          "defName": "通知类型",
+          "defName": "通知类型（1通知公告 2系统消息）",
           "comment": "",
           "type": "",
           "len": "",

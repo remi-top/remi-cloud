@@ -2,7 +2,7 @@ package ai.remi.sys.api.client;
 
 import ai.remi.comm.core.result.ResultBean;
 import ai.remi.comm.feign.aspect.FeignAutoConfiguration;
-import ai.remi.sys.api.factory.IamClientFactory;
+import ai.remi.sys.api.factory.SysClientFactory;
 import ai.remi.sys.domain.dto.post.LogRecordPostDTO;
 import ai.remi.sys.domain.vo.ConfigVO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(value = "remi-sys-web", configuration = FeignAutoConfiguration.class, fallbackFactory = IamClientFactory.class)
-public interface IamClientApi {
+@FeignClient(value = "remi-sys-web", configuration = FeignAutoConfiguration.class, fallbackFactory = SysClientFactory.class)
+public interface SysClientApi {
 
     @Operation(summary = "保存日志")
     @PostMapping("/logRecord/add")

@@ -1,7 +1,7 @@
 package ai.remi.sys.api.fallback;
 
 import ai.remi.comm.core.result.ResultBean;
-import ai.remi.sys.api.client.IamClientApi;
+import ai.remi.sys.api.client.SysClientApi;
 import ai.remi.sys.domain.dto.post.LogRecordPostDTO;
 import ai.remi.sys.domain.vo.ConfigVO;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 @Slf4j
-public class IamClientFallback implements IamClientApi {
+public class SysClientFallback implements SysClientApi {
     @Setter
     private Throwable cause;
 

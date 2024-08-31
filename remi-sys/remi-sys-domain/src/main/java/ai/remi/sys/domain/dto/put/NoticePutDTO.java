@@ -28,9 +28,15 @@ public class NoticePutDTO implements Serializable {
     private String id;
 
     /**
-     * 通知类型
+     * 通知标题
      */
-    @Schema(description = "通知类型")
+    @Schema(description = "通知标题")
+    private Integer noticeTitle;
+
+    /**
+     * 通知类型（1通知公告 2系统消息）
+     */
+    @Schema(description = "通知类型（1通知公告 2系统消息）")
     private Integer noticeType;
 
     /**
