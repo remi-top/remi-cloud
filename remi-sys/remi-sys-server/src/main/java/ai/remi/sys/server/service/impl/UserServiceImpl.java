@@ -1,15 +1,11 @@
 package ai.remi.sys.server.service.impl;
 
-import ai.remi.sys.domain.entity.*;
-import ai.remi.sys.server.service.*;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import ai.remi.comm.domain.tree.TreeBuild;
 import ai.remi.comm.util.bean.BeanCopyUtils;
 import ai.remi.comm.util.collection.CollectionUtils;
 import ai.remi.comm.util.object.ObjectUtils;
 import ai.remi.sys.domain.converter.RoleConverter;
+import ai.remi.sys.domain.entity.*;
 import ai.remi.sys.domain.tree.MenuTree;
 import ai.remi.sys.domain.vo.AppMenuVO;
 import ai.remi.sys.domain.vo.ConfigVO;
@@ -17,6 +13,10 @@ import ai.remi.sys.domain.vo.RoleVO;
 import ai.remi.sys.domain.vo.UserVO;
 import ai.remi.sys.infra.mapper.MenuMapper;
 import ai.remi.sys.infra.mapper.UserMapper;
+import ai.remi.sys.server.service.*;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -92,6 +92,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         Wrapper<User> queryWrapper = Wrappers.<User>lambdaQuery().eq(User::getLoginName, username).eq(User::getPassword, password).eq(User::getStatus, 1).last("limit 1");
         User user = userMapper.selectOne(queryWrapper);
         return user;
+    }
+
+    @Override
+    public boolean updatePwd(String userId, String nowPassword, String newPassword) {
+        User user = userMapper.selectById(userId);
+        if (user == null ||!user.getPassword().equals(nowPassword)) {
+            return false;
+        }
+        user.setPassword(newPassword);
+        return userMapper.updateById(user) > 0;
     }
 
     private List<AppMenuVO> getUserMenus(List<RoleVO> userRoles) {

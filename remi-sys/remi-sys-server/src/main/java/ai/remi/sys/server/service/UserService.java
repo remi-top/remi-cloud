@@ -16,4 +16,6 @@ public interface UserService extends IService<User> {
     UserVO getUserById(String id);
 
     User login(String username, String password);
+
+    boolean updatePwd(String userId, String nowPassword, String newPassword);
 }
