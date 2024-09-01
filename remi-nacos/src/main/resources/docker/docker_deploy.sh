@@ -1,15 +1,15 @@
 #先删除原有的镜像
-docker stop sit-remi-base-nacos
-docker rm -f sit-remi-base-nacos
-docker images | grep sit-remi-base-nacos | awk '{print $3}' | xargs docker rmi -f
-docker build -t sit-remi-base-nacos .
-docker images | grep sit-remi-base-nacos
+docker stop sit-remi-nacos-web
+docker rm -f sit-remi-nacos-web
+docker images | grep sit-remi-nacos-web | awk '{print $3}' | xargs docker rmi -f
+docker build -t sit-remi-nacos-web .
+docker images | grep sit-remi-nacos-web
 #把新镜像推送到私服
 docker login -uadmin -pYdsz1020 harbor.njydsz.com
-docker tag sit-remi-base-nacos harbor.njydsz.com/remi/sit-remi-base-nacos:3.1.0
-docker tag sit-remi-base-nacos harbor.njydsz.com/remi/sit-remi-base-nacos
-docker push harbor.njydsz.com/remi/sit-remi-base-nacos:3.1.0
-docker push harbor.njydsz.com/remi/sit-remi-base-nacos
+docker tag sit-remi-nacos-web harbor.njydsz.com/remi/sit-remi-nacos-web:3.1.0
+docker tag sit-remi-nacos-web harbor.njydsz.com/remi/sit-remi-nacos-web
+docker push harbor.njydsz.com/remi/sit-remi-nacos-web:3.1.0
+docker push harbor.njydsz.com/remi/sit-remi-nacos-web
 #启动最新的镜像服务
-docker run --restart=always -t -dit -p 8848:8848 --name sit-remi-base-nacos sit-remi-base-nacos
+docker run --restart=always -t -dit -p 8848:8848 --name sit-remi-nacos-web sit-remi-nacos-web
 docker ps -a

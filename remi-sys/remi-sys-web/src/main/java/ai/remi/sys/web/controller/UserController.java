@@ -166,7 +166,9 @@ public class UserController {
                                          @RequestParam("nowPassword") String nowPassword,
                                          @RequestParam("newPassword") String newPassword) {
         //执行数据更新
-        return ResultBean.success(userService.updatePwd(userId, nowPassword, newPassword));
+        boolean updated = userService.updatePwd(userId, nowPassword, newPassword);
+        AssertUtils.isTrue(updated, MessageUtils.getMessage("update.user.pwd.error"));
+        return ResultBean.success("更新密码成功！");
     }
 
     /**

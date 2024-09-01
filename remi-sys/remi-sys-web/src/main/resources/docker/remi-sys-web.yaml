@@ -1,0 +1,59 @@
+## Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: sit-remi-sys-web
+  labels:
+    app: sit-remi-sys-web
+spec:
+  type: NodePort
+  ports:
+    - name: sit-remi-sys-web
+      port: 1010
+      protocol: TCP
+      targetPort: 1010
+      nodePort: 30010
+  selector:
+    app: sit-remi-sys-web
+---
+## Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sit-remi-sys-web
+  labels:
+    app: sit-remi-sys-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sit-remi-sys-web
+  template:
+    metadata:
+      labels:
+        app: sit-remi-sys-web
+    spec:
+      containers:
+      - image: harbor.njydsz.com/remi-top/sit-remi-sys-web
+        imagePullPolicy: Always
+        name: sit-remi-sys-web
+        ports:
+        - containerPort: 1010
+          protocol: TCP
+        env:
+        - name: spring.profiles.active
+          value: sit #改环境
+        resources:
+          limits:
+            cpu: "1"
+            memory: "500Mi"
+          requests:
+            cpu: "0.2"
+            memory: "200Mi"
+        volumeMounts:
+        - name: logs
+          mountPath: /logs
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: remi-log

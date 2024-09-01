@@ -9,8 +9,8 @@ db:
   user: ${MYSQL_USER:root}
   password: ${MYSQL_PWD:Remi@123}
   url:
-    0: jdbc:mysql://${MYSQL_HOST:192.168.31.202}:${MYSQL_PORT:30336}/${MYSQL_DB:remi-cloud}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
-    #0: jdbc:mysql://${MYSQL_HOST:192.168.31.66}:${MYSQL_PORT:3306}/${MYSQL_DB:sit-cloud}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+    #0: jdbc:mysql://${MYSQL_HOST:192.168.31.202}:${MYSQL_PORT:30336}/${MYSQL_DB:remi-cloud}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+    0: jdbc:mysql://${MYSQL_HOST:192.168.31.200}:${MYSQL_PORT:30336}/${MYSQL_DB:remi-cloud}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
   pool:
     config:
       connectionTimeout: 30000
