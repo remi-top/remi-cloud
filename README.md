@@ -1,10 +1,15 @@
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">Remi Cloud</h1>
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/remi-top/remi-cloud?logo=github)](https://github.com/remi-top/remi-cloud/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/remi-top/remi-cloud?logo=github)](https://github.com/remi-top/remi-cloud/network)
+[![star](https://gitee.com/remi-top/remi-cloud/badge/star.svg?theme=dark)](https://gitee.com/remi-top/remi-cloud/stargazers)
+[![fork](https://gitee.com/remi-top/remi-cloud/badge/fork.svg?theme=dark)](https://gitee.com/remi-top/remi-cloud/members)
+</div>
 
 ## 平台简介
 
-Remi Cloud (瑞米) 是一款企业级微服务架构和服务能力开发平台，是采用领域驱动模型(DDD)设计思想的、遵循SpringCloudAlibaba编程思想，高度模块化和可配置化。     
-具备服务发现、配置、熔断、限流、降级、监控、分布式事务、单点登录、统一身份，统一应用、统一权限等功能。      
-基于[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)协议，毫无保留给个人及企业免费使用，由[江苏点九科技有限公司](https://dianjiu.cc)提供技术支持。
+Remi Cloud (瑞米) 是一款企业级微服务架构和服务能力开发平台，是采用领域驱动模型(DDD)设计思想的、遵循SpringCloudAlibaba编程思想，高度模块化和可配置化。具备服务发现、配置、熔断、限流、降级、监控、分布式事务、单点登录、统一身份，统一应用、统一权限等功能。基于[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)协议，毫无保留给个人及企业免费使用，由[江苏点九科技有限公司](https://dianjiu.cc)提供技术支持。
 
 - 前端部分，请移步[Remi-Admin](https://gitee.com/remi-top/remi-admin)
 - 后端单体架构，请移步[Remi-Boot](https://gitee.com/remi-top/remi-boot)
