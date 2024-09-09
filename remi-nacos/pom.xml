@@ -9,7 +9,7 @@
     <description>瑞米平台的注册中心和配置中心</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-cloud</artifactId>
         <version>3.1.0</version>
     </parent>

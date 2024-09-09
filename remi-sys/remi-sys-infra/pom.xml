@@ -7,7 +7,7 @@
     <description>remi-sys-infra</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-sys</artifactId>
         <version>3.1.0</version>
     </parent>
@@ -29,12 +29,12 @@
     <dependencies>
         <!--remi-comm-jdbc-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-jdbc</artifactId>
         </dependency>
         <!--remi-sys-domain-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-sys-domain</artifactId>
         </dependency>
         <!--slf4j-->

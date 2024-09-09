@@ -7,7 +7,7 @@
     <description>remi-sys-web</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-sys</artifactId>
         <version>3.1.0</version>
     </parent>
@@ -71,31 +71,31 @@
 
         <!--remi-comm-web-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-web</artifactId>
         </dependency>
 
         <!--remi-comm-log-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-log</artifactId>
         </dependency>
 
         <!--remi-ids-server-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-sys-server</artifactId>
         </dependency>
 
         <!--remi-ids-job-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-sys-job</artifactId>
         </dependency>
 
         <!--remi-ids-api-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-sys-api</artifactId>
         </dependency>
     </dependencies>

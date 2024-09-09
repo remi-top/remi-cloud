@@ -7,7 +7,7 @@
     <description>remi-demo-server</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-demo</artifactId>
         <version>3.1.0</version>
     </parent>
@@ -29,28 +29,28 @@
     <dependencies>
         <!--remi-demo-infra-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-demo-infra</artifactId>
         </dependency>
         <!--启迪公共模块-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-exception</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-minio</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-thread</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-util</artifactId>
         </dependency>
     </dependencies>

@@ -7,7 +7,7 @@
     <description>remi-demo-domain</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-demo</artifactId>
         <version>3.1.0</version>
     </parent>
@@ -29,12 +29,12 @@
     <dependencies>
         <!--remi-comm-domain-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-domain</artifactId>
         </dependency>
         <!--remi-comm-swagger-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-swagger</artifactId>
         </dependency>
         <!-- Lombok -->

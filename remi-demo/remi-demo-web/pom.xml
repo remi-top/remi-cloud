@@ -7,7 +7,7 @@
     <description>remi-demo-web</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-demo</artifactId>
         <version>3.1.0</version>
     </parent>
@@ -32,6 +32,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--logging-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
         <!--spring-cloud-->
@@ -72,31 +84,31 @@
 
         <!--remi-comm-web-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-web</artifactId>
         </dependency>
 
         <!--remi-comm-log-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-log</artifactId>
         </dependency>
 
         <!--remi-ids-server-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-demo-server</artifactId>
         </dependency>
 
         <!--remi-ids-job-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-demo-job</artifactId>
         </dependency>
 
         <!--remi-ids-api-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-demo-api</artifactId>
         </dependency>
     </dependencies>

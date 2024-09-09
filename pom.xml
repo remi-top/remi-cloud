@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ai.remi.cloud</groupId>
+    <groupId>ai.remi.top.cloud</groupId>
     <artifactId>remi-cloud</artifactId>
     <version>3.1.0</version>
     <packaging>pom</packaging>
@@ -161,122 +161,122 @@
             <!--remi-comm-->
             <dependency>
                 <artifactId>remi-comm</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-core</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-minio</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-redis</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-jdbc</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-domain</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-exception</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-feign</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-job</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-log</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-swagger</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-thread</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
                 <artifactId>remi-comm-util</artifactId>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <artifactId>remi-comm-auth</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <artifactId>remi-comm-safe</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.comm</groupId>
+                <groupId>ai.remi.top.comm</groupId>
                 <artifactId>remi-comm-web</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <!--remi-sys-->
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-domain</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-infra</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-server</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-job</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-api</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-app</artifactId>
                 <version>${remi.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.cloud</groupId>
+                <groupId>ai.remi.top.cloud</groupId>
                 <artifactId>remi-sys-web</artifactId>
                 <version>${remi.version}</version>
             </dependency>

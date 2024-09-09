@@ -7,7 +7,7 @@
     <description>remi-demo-app</description>
 
     <parent>
-        <groupId>ai.remi.cloud</groupId>
+        <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-demo</artifactId>
         <version>3.1.0</version>
     </parent>
@@ -71,19 +71,19 @@
 
         <!--remi-comm-feign-->
         <dependency>
-            <groupId>ai.remi.comm</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-feign</artifactId>
         </dependency>
 
         <!--remi-demo-job-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-demo-job</artifactId>
         </dependency>
 
         <!--引入内部模块-->
         <dependency>
-            <groupId>ai.remi.cloud</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-demo-server</artifactId>
         </dependency>
 
