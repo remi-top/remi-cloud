@@ -10,7 +10,7 @@ VOLUME /temp
 
 #ADD  将app.jar文件将拷贝到容器中，默认拷贝到根路径下
 #也可以直接写成ADD app.jar /app.jar 或者 ADD app.jar /
-ADD remi-demo-web-3.1.0.jar remi-demo-web.jar
+ADD remi-demo-web-3.1.1.jar remi-demo-web.jar
 
 #修改app.jar这个文件的访问时间和修改时间为当前时间，而不会修改文件的内容。
 RUN bash -c "touch /remi-demo-web.jar"

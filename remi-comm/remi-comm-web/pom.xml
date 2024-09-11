@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>remi-comm-web</artifactId>
+    <name>remi-comm-web</name>
+    <description>remi-comm-web</description>
+
+    <parent>
+        <groupId>ai.remi.top.cloud</groupId>
+        <artifactId>remi-comm</artifactId>
+        <version>3.1.1</version>
+    </parent>
+
+    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>release</name>
+            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>snapshot</name>
+            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <!-- common-core -->
+        <dependency>
+            <groupId>ai.remi.top.cloud</groupId>
+            <artifactId>remi-comm-core</artifactId>
+        </dependency>
+        <!--common-jdbc-->
+        <dependency>
+            <groupId>ai.remi.top.cloud</groupId>
+            <artifactId>remi-comm-jdbc</artifactId>
+        </dependency>
+        <!-- common-util -->
+        <dependency>
+            <groupId>ai.remi.top.cloud</groupId>
+            <artifactId>remi-comm-util</artifactId>
+        </dependency>
+        <!--remi-comm-exception-->
+        <dependency>
+            <groupId>ai.remi.top.cloud</groupId>
+            <artifactId>remi-comm-exception</artifactId>
+        </dependency>
+        <!--common-swagger-->
+        <dependency>
+            <groupId>ai.remi.top.cloud</groupId>
+            <artifactId>remi-comm-swagger</artifactId>
+        </dependency>
+        <!--spring-web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--skywalking-trace-->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-trace</artifactId>
+        </dependency>
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    ai.remi.comm.log.config.LogRecordAutoConfigure,\
+    ai.remi.comm.log.aspect.LogRecordAspect,\
+    ai.remi.comm.log.service.AsyncLogService

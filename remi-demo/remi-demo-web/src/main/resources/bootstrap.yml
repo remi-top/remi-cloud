@@ -15,7 +15,7 @@ spring:
       password: nacos
       discovery:
         # 配置中心的地址
-        server-addr: ${NACOS_HOST:192.168.31.18}:${NACOS_PORT:8848}
+        server-addr: ${NACOS_HOST:192.168.31.204}:${NACOS_PORT:8848}
         #命名空间
         namespace: ${SERVICE_NAME_SPACE_NAME:dev}
         # 配置文件的环境

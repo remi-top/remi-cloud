@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>remi-comm</artifactId>
+    <name>remi-comm</name>
+    <packaging>pom</packaging>
+    <description>瑞米平台-公共依赖</description>
+
+    <parent>
+        <groupId>ai.remi.top.cloud</groupId>
+        <artifactId>remi-cloud</artifactId>
+        <version>3.1.1</version>
+    </parent>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--子模块管理-->
+    <modules>
+        <module>remi-comm-core</module>
+        <module>remi-comm-util</module>
+        <module>remi-comm-domain</module>
+        <module>remi-comm-jdbc</module>
+        <module>remi-comm-thread</module>
+        <module>remi-comm-job</module>
+        <module>remi-comm-log</module>
+        <module>remi-comm-minio</module>
+        <module>remi-comm-redis</module>
+        <module>remi-comm-feign</module>
+        <module>remi-comm-email</module>
+        <module>remi-comm-exception</module>
+        <module>remi-comm-auth</module>
+        <module>remi-comm-safe</module>
+        <module>remi-comm-swagger</module>
+        <module>remi-comm-web</module>
+    </modules>
+
+    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>release</name>
+            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>snapshot</name>
+            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

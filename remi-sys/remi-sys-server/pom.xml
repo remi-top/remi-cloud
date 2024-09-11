@@ -9,7 +9,7 @@
     <parent>
         <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-sys</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
     </parent>
 
     <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
@@ -34,23 +34,23 @@
         </dependency>
         <!--启迪公共模块-->
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-exception</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-minio</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-thread</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-util</artifactId>
         </dependency>
         <!--slf4j-->

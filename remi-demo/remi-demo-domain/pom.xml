@@ -9,7 +9,7 @@
     <parent>
         <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-demo</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
     </parent>
 
     <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
@@ -29,12 +29,12 @@
     <dependencies>
         <!--remi-comm-domain-->
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-domain</artifactId>
         </dependency>
         <!--remi-comm-swagger-->
         <dependency>
-            <groupId>ai.remi.top.comm</groupId>
+            <groupId>ai.remi.top.cloud</groupId>
             <artifactId>remi-comm-swagger</artifactId>
         </dependency>
         <!-- Lombok -->

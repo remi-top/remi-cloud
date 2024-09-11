@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ ai.remi.comm.jdbc.config.AutoConfig,\
+ ai.remi.comm.jdbc.config.DruidConfig,\
+ ai.remi.comm.jdbc.config.FieldFillConfig,\
+ ai.remi.comm.jdbc.config.InterceptConfig,\
+ ai.remi.comm.jdbc.config.MybatisPlusConfig,\
+ ai.remi.comm.jdbc.config.TenantConfig
+
+
