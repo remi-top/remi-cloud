@@ -3,5 +3,5 @@
 ```shell
 sh ./docker_deploy.sh
 
-docker logs -f dev-remi-sys-app
+docker logs -f dev-remi-sys-web
 ```

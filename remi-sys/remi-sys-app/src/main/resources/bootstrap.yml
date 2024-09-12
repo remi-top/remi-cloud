@@ -1,6 +1,6 @@
 # 服务端口号
 server:
-  port: 12801
+  port: 1020
 
 spring:
   application:

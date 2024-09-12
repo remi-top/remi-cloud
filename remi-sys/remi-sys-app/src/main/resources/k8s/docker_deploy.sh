@@ -8,5 +8,3 @@ docker tag dev-remi-sys-app harbor.******.com/remi-top/dev-remi-sys-app:3.1.0
 docker tag dev-remi-sys-app harbor.******.com/remi-top/dev-remi-sys-app
 docker push harbor.******.com/remi-top/dev-remi-sys-app:3.1.0
 docker push harbor.******.com/remi-top/dev-remi-sys-app
-#基于Docker启动容器
-docker run --restart=always -t -dit -p 1020:1020 --name dev-remi-sys-app harbor.******.com/remi-top/dev-remi-sys-app
