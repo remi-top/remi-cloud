@@ -7,7 +7,7 @@
     <version>3.1.0</version>
     <packaging>pom</packaging>
     <name>remi-cloud</name>
-    <description>Remi Cloud</description>
+    <description>基于AI的企业级快速开发平台</description>
 
     <developers>
         <developer>
