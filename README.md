@@ -1,8 +1,6 @@
 <p align="center">
  <img alt="Remi Cloud" src="./docs/images/logo.png" width="400" height="200" style="margin-bottom: 10px;">
 </p>
-
-[//]: # (<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">Remi Cloud</h1>)
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/remi-top/remi-cloud?logo=github)](https://github.com/remi-top/remi-cloud/stargazers)
