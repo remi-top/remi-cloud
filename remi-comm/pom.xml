@@ -2,22 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>ai.remi.top.comm</groupId>
     <artifactId>remi-comm</artifactId>
     <name>remi-comm</name>
     <packaging>pom</packaging>
-    <description>瑞米平台-公共依赖</description>
+    <description>瑞米平台-公共依赖模块</description>
 
     <parent>
         <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-cloud</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
 
     <properties>
+        <!--jdk-->
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!--UFT-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <!--子模块管理-->
@@ -40,17 +44,531 @@
         <module>remi-comm-web</module>
     </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <groupId>org.springframework.cloud</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <groupId>com.alibaba.cloud</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
+            <!--内部服务依赖开始-->
+            <!--remi-comm-->
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-core</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-minio</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-redis</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-jdbc</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-domain</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-exception</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-feign</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-job</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-log</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-swagger</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-thread</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-util</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-auth</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-safe</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.remi.top.comm</groupId>
+                <artifactId>remi-comm-web</artifactId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <!--内部服务依赖结束-->
+
+            <!--数据库相关依赖开始-->
+            <!-- mybatis-plus -->
+            <dependency>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <groupId>com.baomidou</groupId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <groupId>com.baomidou</groupId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <groupId>com.baomidou</groupId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <!-- druid-->
+            <dependency>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <groupId>com.alibaba</groupId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- oracle -->
+            <dependency>
+                <groupId>com.oracle.database.jdbc</groupId>
+                <artifactId>ojdbc8</artifactId>
+                <version>${ojdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.database.nls</groupId>
+                <artifactId>orai18n</artifactId>
+                <version>${ojdbc.version}</version>
+            </dependency>
+            <!-- sqlserver -->
+            <dependency>
+                <groupId>com.microsoft.sqlserver</groupId>
+                <artifactId>mssql-jdbc</artifactId>
+                <version>${mssql-jdbc.version}</version>
+            </dependency>
+            <!-- db2 -->
+            <dependency>
+                <groupId>com.ibm.db2</groupId>
+                <artifactId>jcc</artifactId>
+                <version>${db2-jdbc.version}</version>
+            </dependency>
+            <!-- postgresql -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+            <!-- h2 database -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.db.version}</version>
+            </dependency>
+            <!--数据库相关依赖结束-->
+
+            <!--其他公共依赖开始-->
+            <!-- commons -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-io</artifactId>
+                <groupId>commons-io</groupId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-lang3</artifactId>
+                <groupId>org.apache.commons</groupId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-codec</artifactId>
+                <groupId>commons-codec</groupId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-logging</artifactId>
+                <groupId>commons-logging</groupId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-net</artifactId>
+                <groupId>commons-net</groupId>
+                <version>${commons-net.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-collections</artifactId>
+                <groupId>commons-collections</groupId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+            <!-- 获取文件类型 -->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tika.version}</version>
+            </dependency>
+
+            <!-- qiniu-java-sdk -->
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>${qiniu.version}</version>
+            </dependency>
+
+            <!-- aliyun-java-sdk -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-sdk-oss.version}</version>
+            </dependency>
+
+            <!-- Minio-java-sdk -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <!-- aws-s3-sdk-->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>s3</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+
+            <!-- 腾讯-cos-sdk-->
+            <dependency>
+                <groupId>com.qcloud</groupId>
+                <artifactId>cos_api</artifactId>
+                <version>${cos_api.version}</version>
+            </dependency>
+
+            <!-- validator -->
+            <dependency>
+                <artifactId>commons-validator</artifactId>
+                <groupId>commons-validator</groupId>
+                <version>${commons-validator.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>hibernate-validator</artifactId>
+                <groupId>org.hibernate.validator</groupId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>hibernate-validator</artifactId>
+                <groupId>org.hibernate</groupId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <!-- okhttp3 -->
+            <dependency>
+                <artifactId>okhttp</artifactId>
+                <groupId>com.squareup.okhttp3</groupId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>logging-interceptor</artifactId>
+                <groupId>com.squareup.okhttp3</groupId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+            <!-- httpclient -->
+            <dependency>
+                <artifactId>httpclient</artifactId>
+                <groupId>org.apache.httpcomponents</groupId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <!--javax-servlet-->
+            <dependency>
+                <artifactId>javax.servlet-api</artifactId>
+                <groupId>javax.servlet</groupId>
+                <version>${javax.version}</version>
+            </dependency>
+            <!--user-agent-->
+            <dependency>
+                <artifactId>device-detector</artifactId>
+                <groupId>io.github.mngsk</groupId>
+                <version>${device.version}</version>
+            </dependency>
+            <!-- guava -->
+            <dependency>
+                <artifactId>guava</artifactId>
+                <groupId>com.google.guava</groupId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- apm-toolkit-trace -->
+            <dependency>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <groupId>org.apache.skywalking</groupId>
+                <version>${trace.version}</version>
+            </dependency>
+            <!--fastjson-->
+            <dependency>
+                <artifactId>fastjson</artifactId>
+                <groupId>com.alibaba</groupId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!--jackson-core -->
+            <dependency>
+                <artifactId>jackson-core</artifactId>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>jackson-annotations</artifactId>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>jackson-databind</artifactId>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!-- gson -->
+            <dependency>
+                <artifactId>gson</artifactId>
+                <groupId>com.google.code.gson</groupId>
+                <version>${gson.version}</version>
+            </dependency>
+            <!--user-agent-->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${bitwalker.version}</version>
+            </dependency>
+            <!--ip2region-->
+            <dependency>
+                <groupId>org.lionsoul</groupId>
+                <artifactId>ip2region</artifactId>
+                <version>${ip2region.version}</version>
+            </dependency>
+            <!-- hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-extra</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-http</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-json</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-crypto</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!-- dom4j -->
+            <dependency>
+                <artifactId>dom4j</artifactId>
+                <groupId>org.dom4j</groupId>
+                <version>${dom4j.version}</version>
+            </dependency>
+            <!--xxl-job-->
+            <dependency>
+                <artifactId>xxl-job-core</artifactId>
+                <groupId>com.xuxueli</groupId>
+                <version>${xxl-job.version}</version>
+            </dependency>
+            <!--knife4j-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <!-- easyexcel -->
+            <dependency>
+                <artifactId>easyexcel</artifactId>
+                <groupId>com.alibaba</groupId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <!--velocity-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+            <!--cglib-->
+            <dependency>
+                <artifactId>cglib</artifactId>
+                <groupId>cglib</groupId>
+                <version>${cglib.version}</version>
+            </dependency>
+            <!--lombok-->
+            <dependency>
+                <artifactId>lombok</artifactId>
+                <groupId>org.projectlombok</groupId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-mapstruct-binding</artifactId>
+                <version>${lombok-mapstruct.version}</version>
+            </dependency>
+            <!--mapstruct-->
+            <dependency>
+                <artifactId>mapstruct</artifactId>
+                <groupId>org.mapstruct</groupId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>mapstruct-processor</artifactId>
+                <groupId>org.mapstruct</groupId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <!--slf4j-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-ext</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-reload4j</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-nop</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <!--其他公共依赖结束-->
+        </dependencies>
+    </dependencyManagement>
+
     <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
     <distributionManagement>
         <repository>
             <id>maven-releases</id>
             <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>remi nexus</name>
+            <url>https://remi.njydsz.com/repository/remi-top</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>remi nexus</name>
+            <url>https://remi.njydsz.com/repository/remi-top</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

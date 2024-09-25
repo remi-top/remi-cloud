@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>remi-boot-app</artifactId>
+    <name>remi-boot-app</name>
+    <description>remi-boot-app</description>
+
+    <parent>
+        <groupId>ai.remi.top.boot</groupId>
+        <artifactId>remi-boot</artifactId>
+        <version>3.1.0</version>
+    </parent>
+
+    <dependencies>
+        <!--spring-boot-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--spring-cloud-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
+        <!--Nacos-注册中心-->
+        <!--<dependency>-->
+        <!--    <groupId>com.alibaba.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
+        <!--</dependency>-->
+
+        <!--Nacos-配置中心-->
+        <!--<dependency>-->
+        <!--    <groupId>com.alibaba.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
+        <!--</dependency>-->
+
+        <!--健康监控-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!--负载均衡-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <!--防刷限流-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--remi-comm-feign-->
+        <dependency>
+            <groupId>ai.remi.top.comm</groupId>
+            <artifactId>remi-comm-feign</artifactId>
+        </dependency>
+
+        <!--引入内部模块-->
+        <dependency>
+            <groupId>ai.remi.top.boot</groupId>
+            <artifactId>remi-boot-job</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.remi.top.boot</groupId>
+            <artifactId>remi-boot-server</artifactId>
+        </dependency>
+
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<resources>-->
+            <!--    <resource>-->
+            <!--        <directory>src/main/java</directory>-->
+            <!--        <includes>-->
+            <!--            <include>**/*.xml</include>-->
+            <!--            <include>**/*.properties</include>-->
+            <!--            <include>**/*.yml</include>-->
+            <!--        </includes>-->
+            <!--    </resource>-->
+            <!--    <resource>-->
+            <!--        <directory>src/main/resources</directory>-->
+            <!--    </resource>-->
+            <!--</resources>-->
+        </plugins>
+    </build>
+
+</project>

@@ -7,51 +7,42 @@
     <description>remi-demo-server</description>
 
     <parent>
-        <groupId>ai.remi.top.cloud</groupId>
+        <groupId>ai.remi.top.demo</groupId>
         <artifactId>remi-demo</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
 
-    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <dependencies>
-        <!--remi-demo-infra-->
+        <!--瑞米公共模块-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
-            <artifactId>remi-demo-infra</artifactId>
-        </dependency>
-        <!--启迪公共模块-->
-        <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-exception</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
-            <artifactId>remi-comm-minio</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-thread</artifactId>
         </dependency>
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-util</artifactId>
+        </dependency>
+        <!--remi-demo-infra-->
+        <dependency>
+            <groupId>ai.remi.top.demo</groupId>
+            <artifactId>remi-demo-infra</artifactId>
+        </dependency>
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
         </dependency>
     </dependencies>
 

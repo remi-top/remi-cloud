@@ -15,12 +15,4 @@ public class CronUtils {
     public static boolean isValid(String cronExpression) {
         return CronExpression.isValidExpression(cronExpression);
     }
-
-    public static void main(String[] args) {
-        String validCron = "0 0 12 * * ?";
-        String invalidCron = "invalid";
-
-        System.out.println("Valid Cron: " + isValid(validCron)); // 输出 true
-        System.out.println("Invalid Cron: " + isValid(invalidCron)); // 输出 false
-    }
 }

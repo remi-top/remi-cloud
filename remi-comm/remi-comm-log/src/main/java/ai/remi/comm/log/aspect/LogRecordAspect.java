@@ -4,6 +4,7 @@ import ai.remi.comm.core.spring.SpringProperties;
 import ai.remi.comm.log.annotation.LogRecord;
 import ai.remi.comm.log.domain.OperateLog;
 import ai.remi.comm.log.enums.BusinessStatus;
+import ai.remi.comm.log.enums.OperatorUser;
 import ai.remi.comm.log.filter.PropertyPreExcludeFilter;
 import ai.remi.comm.log.service.AsyncLogService;
 import ai.remi.comm.redis.service.RedisService;
@@ -14,7 +15,6 @@ import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson2.JSON;
-import ai.remi.comm.log.enums.RedisKeyEnum;
 import eu.bitwalker.useragentutils.UserAgent;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.MapUtils;
@@ -137,10 +137,10 @@ public class LogRecordAspect {
         //从请求头获取操作人
         String accessToken = request.getHeader("X-Access-Token");
         threadInfo.put("token", accessToken);
-        threadInfo.put("userId", redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "id"));
-        threadInfo.put("userCode", redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "userCode"));
-        threadInfo.put("userName", redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "userName"));
-        threadInfo.put("userNameEn", redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "userNameEn"));
+        threadInfo.put("userId", redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "id"));
+        threadInfo.put("userCode", redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "userCode"));
+        threadInfo.put("userName", redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "userName"));
+        threadInfo.put("userNameEn", redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "userNameEn"));
         //从请求头获取系统语言
         threadInfo.put("language", request.getHeader("X-USER-LANGUAGE"));
         //从请求头获取业务流水号
@@ -201,7 +201,7 @@ public class LogRecordAspect {
             }
 
             // 保存数据库
-            //asyncLogService.saveOperateLog(operateLog);
+            asyncLogService.saveOperateLog(operateLog);
         } catch (Exception exp) {
             // 记录本地异常日志
             log.error("异常信息:{}", exp.getMessage());
@@ -272,13 +272,13 @@ public class LogRecordAspect {
      */
     private void setOperateUser(String accessToken, OperateLog operateLog) {
         if (StringUtils.isNotBlank(accessToken)) {
-            String id = String.valueOf(redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "id"));
+            String id = String.valueOf(redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "id"));
             operateLog.setUserId(id);
-            String userCode = String.valueOf(redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "userCode"));
+            String userCode = String.valueOf(redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "userCode"));
             operateLog.setUserCode(userCode);
-            String userName = String.valueOf(redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "userName"));
+            String userName = String.valueOf(redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "userName"));
             operateLog.setUserName(userName);
-            String userNameEn = String.valueOf(redisService.hget(RedisKeyEnum.USER_INFO.getKey(accessToken), "userNameEn"));
+            String userNameEn = String.valueOf(redisService.hget(OperatorUser.USER_INFO.getKey(accessToken), "userNameEn"));
             operateLog.setUserNameEn(userNameEn);
         }
     }

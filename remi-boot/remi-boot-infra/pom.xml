@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>remi-boot-infra</artifactId>
+    <name>remi-boot-infra</name>
+    <description>remi-boot-infra</description>
+
+    <parent>
+        <groupId>ai.remi.top.boot</groupId>
+        <artifactId>remi-boot</artifactId>
+        <version>3.1.0</version>
+    </parent>
+
+    <dependencies>
+        <!--remi-comm-jdbc-->
+        <dependency>
+            <groupId>ai.remi.top.comm</groupId>
+            <artifactId>remi-comm-jdbc</artifactId>
+        </dependency>
+        <!--remi-boot-domain-->
+        <dependency>
+            <groupId>ai.remi.top.boot</groupId>
+            <artifactId>remi-boot-domain</artifactId>
+        </dependency>
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+        </dependency>
+    </dependencies>
+</project>

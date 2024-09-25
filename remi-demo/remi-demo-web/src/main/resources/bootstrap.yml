@@ -7,6 +7,7 @@ spring:
     name: remi-demo-web
   profiles:
     active: dev
+    #active: sit
   cloud:
     # nacos
     nacos:
@@ -15,11 +16,14 @@ spring:
       password: nacos
       discovery:
         # 配置中心的地址
-        server-addr: ${NACOS_HOST:192.168.31.204}:${NACOS_PORT:8848}
+        #server-addr: ${NACOS_HOST:192.168.31.18}:${NACOS_PORT:8848}
+        server-addr: ${NACOS_HOST:192.168.31.200}:${NACOS_PORT:30888}
         #命名空间
         namespace: ${SERVICE_NAME_SPACE_NAME:dev}
+        #namespace: ${SERVICE_NAME_SPACE_NAME:sit}
         # 配置文件的环境
         group: ${SERVICE_DISCOVERY_GROUP_NAME:dev}
+        #group: ${SERVICE_DISCOVERY_GROUP_NAME:sit}
       # 配置中心
       config:
         # 配置中心的地址
@@ -43,3 +47,6 @@ spring:
             group: ${spring.cloud.nacos.discovery.group}
             #是否自动刷新
             refresh: true
+
+
+

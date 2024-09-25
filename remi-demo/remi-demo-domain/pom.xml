@@ -7,34 +7,20 @@
     <description>remi-demo-domain</description>
 
     <parent>
-        <groupId>ai.remi.top.cloud</groupId>
+        <groupId>ai.remi.top.demo</groupId>
         <artifactId>remi-demo</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
-
-    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencies>
         <!--remi-comm-domain-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-domain</artifactId>
         </dependency>
         <!--remi-comm-swagger-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-swagger</artifactId>
         </dependency>
         <!-- Lombok -->

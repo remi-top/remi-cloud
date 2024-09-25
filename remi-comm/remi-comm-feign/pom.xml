@@ -7,9 +7,9 @@
     <description>remi-comm-feign</description>
 
     <parent>
-        <groupId>ai.remi.top.cloud</groupId>
+        <groupId>ai.remi.top.comm</groupId>
         <artifactId>remi-comm</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
 
     <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
@@ -17,30 +17,30 @@
         <repository>
             <id>maven-releases</id>
             <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <dependencies>
-        <!--openfeign-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
         <!--remi-comm-util-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-util</artifactId>
         </dependency>
         <!--servlet-api-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <!--slf4j-->
         <dependency>

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author DianJiu 【公众号 点九开源】
- * @email lidianjiu@njydsz.com
+ * @email dianjiuxyz@gmail.com
  * @date 2022-07-20
  * @desc
  */

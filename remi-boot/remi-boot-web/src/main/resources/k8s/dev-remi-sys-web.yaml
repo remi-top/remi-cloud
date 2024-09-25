@@ -1,0 +1,69 @@
+## Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: remi-boot-web
+  labels:
+    app: remi-boot-web
+spec:
+  type: NodePort
+  ports:
+    - name: remi-boot-web
+      port: 1010
+      protocol: TCP
+      targetPort: 1010
+      nodePort: 30010
+  selector:
+    app: remi-boot-web
+---
+## Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: remi-boot-web
+  labels:
+    app: remi-boot-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: remi-boot-web
+  template:
+    metadata:
+      labels:
+        app: remi-boot-web
+    spec:
+      containers:
+      - image: harbor.******.com/remi-top/remi-boot-web
+        imagePullPolicy: Always
+        name: remi-boot-web
+        ports:
+        - containerPort: 1010
+          protocol: TCP
+        env:
+        - name: NACOS_HOST
+          value: 192.168.31.200
+        - name: NACOS_PORT
+          value: "30888"
+        - name: NAME_SPACE
+          value: dev
+        - name: GROUP_NAME
+          value: dev
+        - name: spring.application.name
+          value: remi-sys-web
+        - name: spring.profiles.active
+          value: dev
+        resources:
+          limits:
+            cpu: "1"
+            memory: "500Mi"
+          requests:
+            cpu: "0.2"
+            memory: "200Mi"
+        volumeMounts:
+        - name: logs
+          mountPath: /logs
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: remi-log

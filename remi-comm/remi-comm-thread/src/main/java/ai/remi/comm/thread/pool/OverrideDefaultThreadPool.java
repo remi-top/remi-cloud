@@ -18,7 +18,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * @author DianJiu 【公众号 点九开源】
  * @author DianJiu 【公众号 点九开源】
- * @email lidianjiu@njydsz.com
+ * @email dianjiuxyz@gmail.com
  * @date 2022-07-20
  * @desc 重写默认线程池配置
  * 基于ThreadPoolTaskExecutor线程池配置
@@ -229,7 +229,6 @@ public class OverrideDefaultThreadPool implements AsyncConfigurer {
         executor.initialize();
         return executor;
     }
-
 
     /**
      * 使用方式：在某个service方法上使用该注解

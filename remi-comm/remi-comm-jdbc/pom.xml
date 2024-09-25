@@ -7,9 +7,9 @@
     <description>remi-comm-jdbc</description>
 
     <parent>
-        <groupId>ai.remi.top.cloud</groupId>
+        <groupId>ai.remi.top.comm</groupId>
         <artifactId>remi-comm</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
 
     <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
@@ -17,24 +17,24 @@
         <repository>
             <id>maven-releases</id>
             <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <dependencies>
         <!--remi-comm-core-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-core</artifactId>
         </dependency>
         <!--remi-comm-util-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-util</artifactId>
         </dependency>
         <!-- mybatis-plus -->
@@ -70,6 +70,35 @@
             <artifactId>mysql-connector-java</artifactId>
             <groupId>mysql</groupId>
             <scope>runtime</scope>
+        </dependency>
+        <!-- oracle -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.nls</groupId>
+            <artifactId>orai18n</artifactId>
+        </dependency>
+        <!-- sqlserver -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+        </dependency>
+        <!-- db2 -->
+        <dependency>
+            <groupId>com.ibm.db2</groupId>
+            <artifactId>jcc</artifactId>
+        </dependency>
+        <!-- postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+        <!-- h2 database -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <!--slf4j-->
         <dependency>

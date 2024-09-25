@@ -1,5 +1,7 @@
 package ai.remi.comm.util.array;
 
+import com.google.common.primitives.Ints;
+
 import java.util.Arrays;
 
 public class SortUtils {
@@ -109,7 +111,7 @@ public class SortUtils {
         int[] left = Arrays.stream(arr).boxed().filter(e -> e < pivot).mapToInt(e -> e).toArray();
         int[] middle = Arrays.stream(arr).boxed().filter(e -> e == pivot).mapToInt(e -> e).toArray();
         int[] right = Arrays.stream(arr).boxed().filter(e -> e > pivot).mapToInt(e -> e).toArray();
-        return concat(quickSort2(left), middle, quickSort2(right));
+        return Ints.concat(quickSort2(left), middle, quickSort2(right));
     }
 
     /**
@@ -142,16 +144,5 @@ public class SortUtils {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
-
-    public static int[] concat(int[] left, int[] middle, int[] right) {
-        int totalLength = left.length + middle.length + right.length;
-        int[] result = new int[totalLength];
-
-        System.arraycopy(left, 0, result, 0, left.length);
-        System.arraycopy(middle, 0, result, left.length, middle.length);
-        System.arraycopy(right, 0, result, left.length + middle.length, right.length);
-
-        return result;
     }
 }

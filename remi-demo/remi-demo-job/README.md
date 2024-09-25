@@ -9,7 +9,7 @@ xxl-job:
   # 执行器
   executor:
     # 执行器AppName
-    appname: remi-demo-job
+    appname: remi-ids-job
     # 执行器注册地址
     address:
     # 执行器IP
@@ -17,7 +17,7 @@ xxl-job:
     # 执行器端口号
     port:
     # 执行器运行日志文件存储磁盘路径
-    logPath: /app/logs/remi-demo-job
+    logPath: /app/logs/remi-ids-job
     # 执行器日志文件保存天数
     logRetentionDays: 30
 ```

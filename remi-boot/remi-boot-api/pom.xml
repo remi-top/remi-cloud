@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>remi-boot-api</artifactId>
+    <name>remi-boot-api</name>
+    <description>remi-boot-api</description>
+
+    <parent>
+        <groupId>ai.remi.top.boot</groupId>
+        <artifactId>remi-boot</artifactId>
+        <version>3.1.0</version>
+    </parent>
+
+    <dependencies>
+        <!--remi-comm-feign-->
+        <dependency>
+            <groupId>ai.remi.top.comm</groupId>
+            <artifactId>remi-comm-feign</artifactId>
+        </dependency>
+        <!--remi-boot-domain-->
+        <dependency>
+            <groupId>ai.remi.top.boot</groupId>
+            <artifactId>remi-boot-domain</artifactId>
+        </dependency>
+        <!--servlet-api-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>

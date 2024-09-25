@@ -7,9 +7,9 @@
     <description>remi-comm-job</description>
 
     <parent>
-        <groupId>ai.remi.top.cloud</groupId>
+        <groupId>ai.remi.top.comm</groupId>
         <artifactId>remi-comm</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
 
     <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
@@ -17,19 +17,19 @@
         <repository>
             <id>maven-releases</id>
             <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
+            <url>https://remi.njydsz.com/repository/remi-top-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <dependencies>
         <!--remi-comm-core-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-core</artifactId>
         </dependency>
         <!-- xxl-job 核心包-->

@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author DianJiu 【公众号 点九开源】
- * @email lidianjiu@njydsz.com
+ * @email dianjiuxyz@gmail.com
  * @date 2022-07-14
  * @desc
  */

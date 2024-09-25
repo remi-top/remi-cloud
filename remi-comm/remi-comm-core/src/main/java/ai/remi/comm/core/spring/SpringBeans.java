@@ -26,28 +26,28 @@ public class SpringBeans implements ApplicationContextAware {
     }
     
     /**
-     * Created by dianjiu on 2022-06-23 ,contact lidianjiu@njydsz.com. 获取applicationContext.
+     * Created by dianjiu on 2022-06-23 ,contact dianjiuxyz@gmail.com. 获取applicationContext.
      */
     public static ApplicationContext getApplicationContext() {
         return applicationContext;
     }
     
     /**
-     * Created by dianjiu on 2022-06-23 ,contact lidianjiu@njydsz.com. 通过name获取 Bean.
+     * Created by dianjiu on 2022-06-23 ,contact dianjiuxyz@gmail.com. 通过name获取 Bean.
      */
     public static Object getBean(String name) {
         return getApplicationContext().getBean(name);
     }
     
     /**
-     * Created by dianjiu on 2022-06-23 ,contact lidianjiu@njydsz.com. 通过class获取Bean.
+     * Created by dianjiu on 2022-06-23 ,contact dianjiuxyz@gmail.com. 通过class获取Bean.
      */
     public static <T> T getBean(Class<T> clazz) {
         return getApplicationContext().getBean(clazz);
     }
     
     /**
-     * Created by dianjiu on 2022-06-23 ,contact lidianjiu@njydsz.com. 通过name,以及Clazz返回指定的Bean.
+     * Created by dianjiu on 2022-06-23 ,contact dianjiuxyz@gmail.com. 通过name,以及Clazz返回指定的Bean.
      */
     public static <T> T getBean(String name, Class<T> clazz) {
         return getApplicationContext().getBean(name, clazz);

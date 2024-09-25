@@ -2,36 +2,27 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>ai.remi.top.demo</groupId>
     <artifactId>remi-demo</artifactId>
     <name>remi-demo</name>
     <packaging>pom</packaging>
+    <description>瑞米平台-快速开发服务</description>
 
     <parent>
         <groupId>ai.remi.top.cloud</groupId>
         <artifactId>remi-cloud</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
 
     <properties>
+        <!--jdk-->
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!--UFT-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
-    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <modules>
         <module>remi-demo-domain</module>
@@ -39,53 +30,200 @@
         <module>remi-demo-server</module>
         <module>remi-demo-job</module>
         <module>remi-demo-app</module>
-        <module>remi-demo-web</module>
         <module>remi-demo-api</module>
+        <module>remi-demo-web</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <groupId>org.springframework.cloud</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <groupId>com.alibaba.cloud</groupId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
+            <!--内部服务依赖开始-->
+            <!--remi-comm-->
+            <dependency>
+                <artifactId>remi-comm</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-core</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-redis</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-jdbc</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-domain</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-exception</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-feign</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-job</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-log</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-swagger</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-thread</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-util</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-auth</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-safe</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>remi-comm-web</artifactId>
+                <groupId>ai.remi.top.comm</groupId>
+                <version>${remi-comm.version}</version>
+            </dependency>
             <!--remi-demo-->
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-domain</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-infra</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-server</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-job</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-api</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-app</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
             <dependency>
-                <groupId>ai.remi.top.cloud</groupId>
+                <groupId>ai.remi.top.demo</groupId>
                 <artifactId>remi-demo-web</artifactId>
-                <version>${remi.version}</version>
+                <version>${remi-demo.version}</version>
             </dependency>
+            <!--内部服务依赖结束-->
         </dependencies>
     </dependencyManagement>
+
+    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>release</name>
+            <url>https://remi.njydsz.com/repository/remi-top-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>snapshot</name>
+            <url>https://remi.njydsz.com/repository/remi-top-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>remi nexus</name>
+            <url>https://remi.njydsz.com/repository/remi-top</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>remi nexus</name>
+            <url>https://remi.njydsz.com/repository/remi-top</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

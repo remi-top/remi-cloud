@@ -7,24 +7,10 @@
     <description>remi-demo-app</description>
 
     <parent>
-        <groupId>ai.remi.top.cloud</groupId>
+        <groupId>ai.remi.top.demo</groupId>
         <artifactId>remi-demo</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.0</version>
     </parent>
-
-    <!-- 打包上传到私服， 需要和配置文件中的server节点配合使用 -->
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>release</name>
-            <url>https://repository.njydsz.com/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>snapshot</name>
-            <url>https://repository.njydsz.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencies>
         <!--spring-boot-->
@@ -71,22 +57,29 @@
 
         <!--remi-comm-feign-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.comm</groupId>
             <artifactId>remi-comm-feign</artifactId>
-        </dependency>
-
-        <!--remi-demo-job-->
-        <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
-            <artifactId>remi-demo-job</artifactId>
         </dependency>
 
         <!--引入内部模块-->
         <dependency>
-            <groupId>ai.remi.top.cloud</groupId>
+            <groupId>ai.remi.top.demo</groupId>
+            <artifactId>remi-demo-job</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.remi.top.demo</groupId>
             <artifactId>remi-demo-server</artifactId>
         </dependency>
 
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
